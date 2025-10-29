@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="contenedor-musica">
+  <section class="texto-musica">
+    <h1>Audiovisual</h1>
+    <p>Como creador de contenido, he realizado algunos vídeos donde experimento con diferentes técnicas y estilos musicales acompañadas de distintas narrativas visuales. Aquí puedes ver algunos de ellos.</p>
+  </section>
+  <section class="yt-videos">
+    {% for video in videos %}
+    <iframe width="560" height="315" src="{{ video.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

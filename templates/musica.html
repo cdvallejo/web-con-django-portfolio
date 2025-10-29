@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="contenedor-musica">
+  <section class="texto-musica">
+    <h1>Música</h1>
+    <p>Como compositor, he realizado música para videojuegos, cortometrajes y canales de contenido. Aquí puedes escuchar algunas de mis composiciones originales.</p>
+  </section>
+  <section class="bc-musica">
+    {% for album in albums %}
+    <iframe style="border: 0; width: {{ album.width }}; height: {{ album.height }}"
+      src="{{ album.url }}"
+      seamless><a href="{{ album.link }}">{{ album.title }}</a></iframe>
+    {% endfor %}
+  </section>
+</div>
+{% endblock %}

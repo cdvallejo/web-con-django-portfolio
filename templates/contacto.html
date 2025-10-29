@@ -1,0 +1,64 @@
+{% extends "base.html" %} 
+
+{% load static %} 
+
+{% block content %}
+
+<div class="contacto-section">
+  <div class="contacto-header">
+    <h1>Contacto</h1>
+    <p>¿Tienes un proyecto en mente? ¡Hablemos!</p>
+  </div>
+
+  <div class="contacto-content">
+    <div class="contacto-info">
+      <h2>Información de Contacto</h2>
+      
+      <div class="info-item">
+        <div class="info-icon">📧</div>
+        <div class="info-text">
+          <strong>Email</strong>
+          <span>Contáctame por correo electrónico</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">📱</div>
+        <div class="info-text">
+          <strong>Teléfono</strong>
+          <span>Disponible para consultas</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <strong>Ubicación</strong>
+          <span>Málaga, España</span>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">💼</div>
+        <div class="info-text">
+          <strong>Disponibilidad</strong>
+          <span>Abierto a proyectos freelance</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contacto-map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.5418145008657!2d-4.6141762237059085!3d36.73356387145229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72ef02fec47829%3A0x56ba75d9438b057f!2sLa%20verdialera!5e0!3m2!1ses!2ses!4v1760722774155!5m2!1ses!2ses"
+        width="600"
+        height="450"
+        style="border: 0"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,13 @@
+{% load static %}
+
+<header>
+  <div class="home">
+    <div class="header-brand">
+      <img src="{% static 'images/charlitos-avatar-web.jpg' %}" alt="Carlos Vallejo" class="header-avatar">
+      <a href="{% url 'index' %}">
+        <h1>Carlos Vallejo</h1>
+      </a>
+    </div>
+    {% include "includes/menu.html" %}
+  </div>
+</header>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+<div class="hero-section">
+  <div class="hero-content">
+    <div class="hero-text">
+      <h1 class="hero-title">Hola, soy <span class="highlight">Carlos Vallejo</span></h1>
+      <p class="hero-subtitle">Compositor musical | Desarrollador | Creativo audiovisual</p>
+      <p class="hero-description">
+        Creando experiencias únicas a través de la música, el código y el arte visual. 
+        Especializado en composición para videojuegos, desarrollo web y proyectos audiovisuales.
+      </p>
+      <div class="hero-buttons">
+        <a href="{% url 'musica' %}" class="btn btn-primary">Ver mi música</a>
+        <a href="{% url 'contacto' %}" class="btn btn-secondary">Contactar</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="{% static 'images/charlitos-avatar-web.jpg' %}" alt="Carlos Vallejo">
+    </div>
+  </div>
+</div>
+
+<section class="services-section">
+  <h2 class="section-title">¿Qué hago?</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">🎵</div>
+      <h3>Composición Musical</h3>
+      <p>Creación de bandas sonoras originales para videojuegos, cortometrajes y contenido multimedia.</p>
+      <a href="{% url 'musica' %}" class="service-link">Ver proyectos →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">💻</div>
+      <h3>Desarrollo Web</h3>
+      <p>Diseño y desarrollo de aplicaciones web modernas con tecnologías actuales como Django, Python y JavaScript.</p>
+      <a href="{% url 'programacion' %}" class="service-link">Ver trabajos →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">🎬</div>
+      <h3>Producción Audiovisual</h3>
+      <p>Creación de contenido audiovisual, edición de video y fotografía para proyectos creativos.</p>
+      <a href="{% url 'fotografia' %}" class="service-link">Ver galería →</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
