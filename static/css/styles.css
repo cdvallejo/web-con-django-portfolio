@@ -159,14 +159,19 @@ nav ul li:hover::after {
 
 /* ==================== PÁGINA PRINCIPAL - HERO ==================== */
 .hero-section {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
+  background: white;
+  color: black;
   padding: 4rem 2rem;
-  min-height: 70vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
   animation: fadeIn 1s ease-in;
+  position: relative;
+}
+
+.hero-section h1 {
+  color: #000;
 }
 
 .hero-content {
@@ -180,6 +185,40 @@ nav ul li:hover::after {
 
 .hero-text {
   animation: slideInLeft 0.8s ease-out;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  border: 3px solid #7137dc;
+  box-shadow: 0 10px 30px rgba(113, 55, 220, 0.2);
+  position: relative;
+}
+
+/* Pico del bocadillo apuntando a la derecha (hacia el avatar) */
+.hero-text::after {
+  content: '';
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 30px solid #7137dc;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+}
+
+.hero-text::before {
+  content: '';
+  position: absolute;
+  right: -24px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 24px solid white;
+  border-top: 16px solid transparent;
+  border-bottom: 16px solid transparent;
+  z-index: 1;
 }
 
 .hero-title {
@@ -189,7 +228,7 @@ nav ul li:hover::after {
 }
 
 .hero-title .highlight {
-  color: #ffd700;
+  color: #7137dc;
   position: relative;
 }
 
@@ -224,25 +263,26 @@ nav ul li:hover::after {
 }
 
 .btn-primary {
-  background-color: white;
-  color: #667eea;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background-color: #7137dc;
+  color: white;
+  box-shadow: 0 4px 15px rgba(113, 55, 220, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(113, 55, 220, 0.5);
+  background-color: #8c52ff;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  color: #7137dc;
+  border: 2px solid #7137dc;
 }
 
 .btn-secondary:hover {
-  background-color: white;
-  color: #667eea;
+  background-color: #7137dc;
+  color: white;
 }
 
 .hero-image {
@@ -255,8 +295,7 @@ nav ul li:hover::after {
 .hero-image img {
   width: 300px;
   height: 300px;
-  border-radius: 20%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* ==================== SECCIÓN DE SERVICIOS ==================== */
@@ -885,6 +924,29 @@ footer {
 
   .hero-buttons {
     justify-content: center;
+  }
+
+  /* Cambiar el pico del bocadillo hacia arriba en móvil */
+  .hero-text::after {
+    right: auto;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid #7137dc;
+    border-top: none;
+  }
+
+  .hero-text::before {
+    right: auto;
+    left: 50%;
+    top: -24px;
+    transform: translateX(-50%);
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom: 24px solid white;
+    border-top: none;
   }
 
   .contacto-content {
