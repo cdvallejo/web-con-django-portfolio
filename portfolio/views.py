@@ -67,6 +67,7 @@ def audiovisual(request):
         {'url': 'https://www.youtube.com/embed/3XKruCUB1PM?si=4jNRPAQplrGkD0TY'},
         {'url': 'https://www.youtube.com/embed/b_Ya02k5DMg?si=VYL53zDtYEODEyz8'},
         {'url': 'https://www.youtube.com/embed/X7bzjwnF90k?si=fVPJ7iQuyMbXSmyL'},
+        {'url': 'https://www.youtube.com/embed/NhRT8yUaxMc?si=zNMIRGM54mDfL4Hx'},
     ]
     return render(request, 'audiovisual.html', {'videos': videos})
 
