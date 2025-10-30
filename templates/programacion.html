@@ -56,38 +56,16 @@
   <div class="skills-section">
     <h2>Tecnologías & Habilidades</h2>
     <div class="skills-grid">
+      {% for skill in skills %}
       <div class="skill-item">
-        <div class="skill-icon">🐍</div>
-        <div class="skill-name">Python</div>
+        <img src="{{ skill.icon }}" alt="{{ skill.name }}" class="skill-icon-img">
+        <div class="skill-name">{{ skill.name }}</div>
+        <div class="skill-level-text">{{ skill.level }}</div>
+        <div class="skill-level-bar">
+          <div class="skill-level-fill level-{{ skill.level|lower }}"></div>
+        </div>
       </div>
-      <div class="skill-item">
-        <div class="skill-icon">🎯</div>
-        <div class="skill-name">Django</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon">📜</div>
-        <div class="skill-name">JavaScript</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon">🎨</div>
-        <div class="skill-name">HTML/CSS</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon">📊</div>
-        <div class="skill-name">Git</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon">🗄️</div>
-        <div class="skill-name">SQL</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon">⚡</div>
-        <div class="skill-name">APIs REST</div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-icon">🔌</div>
-        <div class="skill-name">Web Dev</div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 </div>

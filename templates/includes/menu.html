@@ -1,6 +1,12 @@
-<nav>
+<input type="checkbox" id="menu-toggle" class="menu-toggle-checkbox">
+<label for="menu-toggle" class="menu-toggle">
+  <span class="hamburger"></span>
+  <span class="hamburger"></span>
+  <span class="hamburger"></span>
+</label>
+
+<nav class="nav-menu">
   <ul>
-    <li><a href="{% url 'index' %}">Inicio</a></li>
     <li><a href="{% url 'musica' %}">Música</a></li>
     <li><a href="{% url 'programacion' %}">Programación</a></li>
     <li><a href="{% url 'audiovisual' %}">Audiovisual</a></li>

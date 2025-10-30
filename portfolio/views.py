@@ -54,11 +54,75 @@ def musica(request):
             'width': '350px',
             'height': '621px'
         },
+        {
+            'url': 'https://bandcamp.com/EmbeddedPlayer/track=1507940757/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/transparent=true/',
+            'link': 'https://carlosvallejo.bandcamp.com/track/lugar-soleado-yasunari-kawabata-audiolibro',
+            'title': 'Lugar Soleado (Yasunari Kawabata) - Audiolibro by Carlos Vallejo',
+            'width': '350px',
+            'height': '442px'
+        },
     ]
     return render(request, 'musica.html', {'albums': albums})
 
 def programacion(request):
-  return render(request, "programacion.html")
+    skills = [
+        {
+            'name': 'Python',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+            'level': 'Avanzado'
+        },
+        {
+            'name': 'Django',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
+            'level': 'Avanzado'
+        },
+        {
+            'name': 'JavaScript',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+            'level': 'Intermedio'
+        },
+        {
+            'name': 'HTML5',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+            'level': 'Experto'
+        },
+        {
+            'name': 'CSS3',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+            'level': 'Avanzado'
+        },
+        {
+            'name': 'Git',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+            'level': 'Intermedio'
+        },
+        {
+            'name': 'MySQL',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+            'level': 'Intermedio'
+        },
+        {
+            'name': 'AWS',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
+            'level': 'Básico'
+        },
+        {
+            'name': 'Java',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+            'level': 'Intermedio'
+        },
+        {
+            'name': 'Angular',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
+            'level': 'Básico'
+        },
+        {
+            'name': 'C',
+            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
+            'level': 'Intermedio'
+        },
+    ]
+    return render(request, "programacion.html", {'skills': skills})
 
 def audiovisual(request):
     videos = [
@@ -93,4 +157,40 @@ def fotografia(request):
     return render(request, "fotografia.html", {'fotos': fotos})
 
 def contacto(request):
+  if request.method == 'POST':
+    nombre = request.POST.get('nombre')
+    email = request.POST.get('email')
+    asunto = request.POST.get('asunto')
+    mensaje = request.POST.get('mensaje')
+    
+    try:
+      from django.core.mail import send_mail
+      
+      # Cuerpo del email
+      mensaje_completo = f"""
+      Nuevo mensaje de contacto desde el portfolio
+      
+      Nombre: {nombre}
+      Email: {email}
+      Asunto: {asunto}
+      
+      Mensaje:
+      {mensaje}
+      """
+      
+      # Enviar email
+      send_mail(
+        subject=f'Portfolio - {asunto}',
+        message=mensaje_completo,
+        from_email='carlosd.vallejo@gmail.com',
+        recipient_list=['carlosd.vallejo@gmail.com'],
+        fail_silently=False,
+      )
+      
+      return render(request, "contacto.html", {'mensaje_enviado': True})
+    
+    except Exception as e:
+      print(f"Error al enviar email: {e}")  # Para ver el error en la consola
+      return render(request, "contacto.html", {'error': f'Error al enviar el mensaje. Por favor, intenta de nuevo.'})
+  
   return render(request, "contacto.html")
