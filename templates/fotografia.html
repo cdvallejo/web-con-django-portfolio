@@ -4,61 +4,18 @@
 
 {% block content %}
 
-<div class="fotografia-section">
-  <div class="fotografia-header">
-    <h1>Fotografía & Audiovisual</h1>
-    <p>Creación de contenido visual para proyectos creativos y artísticos</p>
-  </div>
-
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <div class="gallery-image">📸</div>
-      <div class="gallery-content">
-        <h3>Fotografía Artística</h3>
-        <p>Captura de momentos únicos con enfoque creativo y estilo personal. Fotografía de eventos, retratos y proyectos artísticos.</p>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-image">🎬</div>
-      <div class="gallery-content">
-        <h3>Producción Audiovisual</h3>
-        <p>Creación y edición de contenido audiovisual para cortometrajes, videoclips y proyectos multimedia.</p>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-image">🎥</div>
-      <div class="gallery-content">
-        <h3>Edición de Video</h3>
-        <p>Post-producción profesional con atención al detalle, color grading y efectos visuales para diversos proyectos.</p>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-image">✨</div>
-      <div class="gallery-content">
-        <h3>Contenido Digital</h3>
-        <p>Creación de contenido visual para redes sociales, YouTube y plataformas digitales con estilo propio.</p>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-image">🎨</div>
-      <div class="gallery-content">
-        <h3>Diseño Visual</h3>
-        <p>Diseño gráfico y visual para proyectos creativos, portadas de álbumes y material promocional.</p>
-      </div>
-    </div>
-
-    <div class="gallery-item">
-      <div class="gallery-image">🌟</div>
-      <div class="gallery-content">
-        <h3>Proyectos Creativos</h3>
-        <p>Colaboraciones artísticas y proyectos experimentales que combinan música, video y arte visual.</p>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="contenedor-musica">
+  <section class="texto-musica">
+    <h1>Fotografía</h1>
+    <p>Aunque no me dedico profesionalmente a la fotografía, tengo una gran pasión por capturar momentos. Tanto con fotografía digital como analógica.</p>
+  </section>
+  <section class="galeria-fotos">
+    {% for foto in fotos %}
+    <a data-flickr-embed="true" data-context="true" href="{{ foto.page_url }}" title="{{ foto.title }}" target="_blank">
+      <img src="{{ foto.img_url }}" alt="{{ foto.title }}"/>
+    </a>
+    {% endfor %}
+  </section>
+  <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
 
 {% endblock %}

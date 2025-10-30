@@ -186,11 +186,15 @@ nav ul li:hover::after {
 .hero-text {
   animation: slideInLeft 0.8s ease-out;
   background: white;
-  padding: 2rem;
+  padding: 2.5rem;
   border-radius: 20px;
   border: 3px solid #7137dc;
   box-shadow: 0 10px 30px rgba(113, 55, 220, 0.2);
   position: relative;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* Pico del bocadillo apuntando a la derecha (hacia el avatar) */
@@ -237,13 +241,29 @@ nav ul li:hover::after {
   margin-bottom: 1.5rem;
   opacity: 0.95;
   font-weight: 400;
+  min-height: 2em;
 }
 
 .hero-description {
   font-size: 1.1rem;
-  margin-bottom: 2rem;
-  opacity: 0.9;
+  margin-bottom: 0;
   line-height: 1.8;
+  transition: opacity 0.5s ease;
+  min-height: 7.2em;
+}
+
+.cursor {
+  animation: blink 0.7s infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
 }
 
 .hero-buttons {
@@ -467,6 +487,65 @@ nav ul li:hover::after {
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
+  }
+}
+
+/* ==================== SECCIÓN DE FOTOGRAFÍA ==================== */
+.galeria-fotos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  padding: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+
+.galeria-fotos a {
+  display: block;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+.galeria-fotos img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.galeria-fotos a:hover img {
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+  transform: translateY(-5px);
+}
+
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+  .galeria-fotos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+  
+  .galeria-fotos img {
+    max-height: 350px;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .galeria-fotos {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .galeria-fotos img {
+    max-height: none;
   }
 }
 

@@ -7,11 +7,8 @@
   <div class="hero-content">
     <div class="hero-text">
       <h1 class="hero-title">Hola, soy <span class="highlight">Carlos Vallejo</span></h1>
-      <p class="hero-subtitle">Compositor musical | Desarrollador | Creativo audiovisual</p>
-      <p class="hero-description">
-        Creando experiencias únicas a través de la música, el código y el arte visual. 
-        Especializado en composición para videojuegos, desarrollo web y proyectos audiovisuales.
-      </p>
+      <p class="hero-subtitle typewriter"></p>
+      <p class="hero-description typewriter-description" style="opacity: 0;"></p>
     </div>
     <div class="hero-image">
       <img src="{% static 'images/charlitos-avatar-web.jpg' %}" alt="Carlos Vallejo">
@@ -42,4 +39,46 @@
     </div>
   </div>
 </section>
+
+<script>
+  // Efecto máquina de escribir
+  const subtitleText = "Compositor musical | Desarrollador | Creativo audiovisual";
+  const descriptionText = "Creando experiencias únicas a través de la música, el código y el arte visual. Especializado en composición para videojuegos, desarrollo web y proyectos audiovisuales.";
+  
+  const subtitleElement = document.querySelector('.hero-subtitle');
+  const descriptionElement = document.querySelector('.hero-description');
+  
+  let subtitleIndex = 0;
+  let descriptionIndex = 0;
+  
+  function typeSubtitle() {
+    if (subtitleIndex < subtitleText.length) {
+      const currentText = subtitleText.substring(0, subtitleIndex + 1);
+      subtitleElement.innerHTML = currentText + '<span class="cursor">|</span>';
+      subtitleIndex++;
+      setTimeout(typeSubtitle, 50);
+    } else {
+      // Cuando termine el subtítulo, quitar el cursor y empezar la descripción
+      subtitleElement.textContent = subtitleText;
+      descriptionElement.style.opacity = '1';
+      setTimeout(typeDescription, 300);
+    }
+  }
+  
+  function typeDescription() {
+    if (descriptionIndex < descriptionText.length) {
+      const currentText = descriptionText.substring(0, descriptionIndex + 1);
+      descriptionElement.innerHTML = currentText + '<span class="cursor">|</span>';
+      descriptionIndex++;
+      setTimeout(typeDescription, 30);
+    } else {
+      // Cuando termine, quitar el cursor
+      descriptionElement.textContent = descriptionText;
+    }
+  }
+  
+  // Esperar un poco antes de empezar
+  setTimeout(typeSubtitle, 500);
+</script>
+
 {% endblock %}
