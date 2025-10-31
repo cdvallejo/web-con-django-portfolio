@@ -272,6 +272,7 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 | ![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white) | Lenguaje de programación principal (v3.10) |
 | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white) | Estructura y contenido de las páginas |
 | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white) | Estilos, diseño visual y animaciones |
+| ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black) | Efecto typewriter en página principal |
 | ![python-decouple](https://img.shields.io/badge/python--decouple-3.8-green) | Gestión segura de variables de entorno |
 | ![Gmail SMTP](https://img.shields.io/badge/Gmail_SMTP-EA4335?logo=gmail&logoColor=white) | Servidor de correo para formulario de contacto |
 | ![PythonAnywhere](https://img.shields.io/badge/PythonAnywhere-1D9FD7?logo=python&logoColor=white) | Plataforma de despliegue en producción |
