@@ -640,6 +640,9 @@ nav ul li:hover::after {
   overflow: hidden;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  width: 350px;
 }
 
 .project-card:hover {
@@ -657,10 +660,14 @@ nav ul li:hover::after {
   justify-content: center;
   font-size: 4rem;
   color: white;
+  flex-shrink: 0;
 }
 
 .project-content {
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .project-content h3 {
@@ -690,11 +697,13 @@ nav ul li:hover::after {
   color: #b0b0b0;
   margin-bottom: 1rem;
   line-height: 1.6;
+  flex-grow: 1;
 }
 
 .project-links {
   display: flex;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .project-link {
@@ -741,36 +750,60 @@ nav ul li:hover::after {
   color: #ffffff;
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1.5rem;
+.skills-categories-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.skills-category {
+  flex: 1;
+  min-width: 200px;
+}
+
+.category-title {
+  font-size: 1.1rem;
+  color: #a374ff;
+  margin-bottom: 0.8rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid rgba(163, 116, 255, 0.3);
+  text-align: center;
+}
+
+.skills-tabla {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
 }
 
 .skill-item {
   text-align: center;
-  padding: 1rem;
+  padding: 0.5rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-radius: 8px;
   transition: all 0.3s ease;
+  width: 110px;
+  flex-shrink: 0;
 }
 
 .skill-item:hover {
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
-  transform: translateY(-3px);
+  transform: translateY(-2px);
   border-color: rgba(102, 126, 234, 0.5);
 }
 
 .skill-item .skill-icon {
-  font-size: 3rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
 }
 
 .skill-icon-img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 0.5rem;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0.3rem;
   transition: transform 0.3s ease;
 }
 
@@ -781,23 +814,24 @@ nav ul li:hover::after {
 .skill-item .skill-name {
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
+  font-size: 0.9rem;
 }
 
 .skill-level-text {
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   color: #b0b0b0;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
   font-weight: 500;
 }
 
 .skill-level-bar {
   width: 100%;
-  height: 8px;
+  height: 5px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
 }
 
 .skill-level-fill {

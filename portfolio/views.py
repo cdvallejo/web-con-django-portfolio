@@ -65,64 +65,123 @@ def musica(request):
     return render(request, 'musica.html', {'albums': albums})
 
 def programacion(request):
-    skills = [
+    projects = [
         {
-            'name': 'Python',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
-            'level': 'Avanzado'
+            'emoji': '💼',
+            'title': 'Portfolio Personal',
+            'technologies': ['Django', 'Python', 'HTML/CSS'],
+            'description': 'Consulta el código del portfolio profesional que estás viendo. Desarrollado con Django.',
+            'github': 'https://github.com/cdvallejo/web-con-django-portfolio'
         },
         {
-            'name': 'Django',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
-            'level': 'Avanzado'
+            'emoji': '🗄️',
+            'title': 'CRUD de Actuaciones',
+            'technologies': ['PHP', 'MySQL', 'HTML/CSS', 'Javascript'],
+            'description': 'Aplicación web con funcionalidades CRUD (Create, Read, Update, Delete) desarrollada con PHP, HTML, CSS, Bootstrap y algo de JavaScript.',
+            'github': 'https://github.com/cdvallejo/actuaciones'
         },
         {
-            'name': 'JavaScript',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
-            'level': 'Intermedio'
-        },
-        {
-            'name': 'HTML5',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
-            'level': 'Experto'
-        },
-        {
-            'name': 'CSS3',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
-            'level': 'Avanzado'
-        },
-        {
-            'name': 'Git',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
-            'level': 'Intermedio'
-        },
-        {
-            'name': 'MySQL',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
-            'level': 'Intermedio'
-        },
-        {
-            'name': 'AWS',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
-            'level': 'Básico'
-        },
-        {
-            'name': 'Java',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
-            'level': 'Intermedio'
-        },
-        {
-            'name': 'Angular',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
-            'level': 'Básico'
-        },
-        {
-            'name': 'C',
-            'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
-            'level': 'Intermedio'
+            'emoji': '🔌',
+            'title': 'Base de datos MongoDB - FastAPI',
+            'technologies': ['Python', 'FastAPI', 'MongoDB', 'Docker'],
+            'description': 'API RESTful desarrollada con Python, FastAPI y MongoDB, que muestra una colección de obras artísticas.',
+            'github': 'https://github.com/cdvallejo/fastapi-mongodb-con-docker-obras-v2'
         },
     ]
-    return render(request, "programacion.html", {'skills': skills})
+    
+    skills_categories = [
+        {
+            'category': 'Lenguajes',
+            'items': [
+                {
+                    'name': 'Python',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+                    'level': 'Intermedio'
+                },
+                {
+                    'name': 'JavaScript',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+                    'level': 'Intermedio'
+                },
+                {
+                    'name': 'Java',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+                    'level': 'Intermedio'
+                },
+                {
+                    'name': 'C',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg',
+                    'level': 'Intermedio'
+                },
+            ]
+        },
+        {
+            'category': 'Frameworks',
+            'items': [
+                {
+                    'name': 'Django',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
+                    'level': 'Intermedio'
+                },
+                {
+                    'name': 'Angular',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg',
+                    'level': 'Intermedio'
+                },
+            ]
+        },
+        {
+            'category': 'Frontend',
+            'items': [
+                {
+                    'name': 'HTML5',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+                    'level': 'Intermedio'
+                },
+                {
+                    'name': 'CSS3',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+                    'level': 'Intermedio'
+                },
+            ]
+        },
+        {
+            'category': 'Bases de Datos',
+            'items': [
+                {
+                    'name': 'MySQL',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+                    'level': 'Intermedio'
+                },
+                {
+                    'name': 'MongoDB',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+                    'level': 'Intermedio'
+                },
+            ]
+        },
+        {
+            'category': 'Herramientas & Cloud',
+            'items': [
+                {
+                    'name': 'Git',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+                    'level': 'Intermedio'
+                },
+                {
+                    'name': 'Docker',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+                    'level': 'Intermedio'
+                },
+                {
+                    'name': 'AWS',
+                    'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
+                    'level': 'Intermedio'
+                },
+            ]
+        },
+    ]
+    return render(request, "programacion.html", {'projects': projects, 'skills_categories': skills_categories})
 
 def audiovisual(request):
     videos = [
@@ -137,6 +196,7 @@ def audiovisual(request):
 
 def fotografia(request):
     fotos = [
+        {'page_url': 'https://www.flickr.com/photos/113666935@N06/54891143659/in/album-72177720330019503', 'img_url': 'https://live.staticflickr.com/65535/54891143659_0334204675_3k.jpg', 'title': 'Spotmatic-Ilford-HP5-Octubre-2025-17'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54776980347/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54776980347_c062fc9a82_3k.jpg', 'title': 'feria-mijas-2025-73'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54778069693/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54778069693_f7d4a5df48_6k.jpg', 'title': 'feria-mijas-2025-22'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54750318229/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54750318229_f393f9e36b_6k.jpg', 'title': 'Hotel en ruidas en pantano de Casasola (29)'},
@@ -145,6 +205,7 @@ def fotografia(request):
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54722537845/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54722537845_8fa3617756_3k.jpg', 'title': 'genalguacil-agos-2025-21'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54528448625/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54528448625_b77a117d33_3k.jpg', 'title': 'DSCF1733'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54528290804/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54528290804_907f0dfd59_3k.jpg', 'title': 'dia_museos_2025-12'},
+        {'page_url': 'https://www.flickr.com/photos/113666935@N06/54053314191/in/album-72177720321003992', 'img_url': 'https://live.staticflickr.com/65535/54053314191_8280784052_3k.jpg', 'title': 'Coche con patas'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54511521407/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54511521407_ca268722c8_3k.jpg', 'title': 'feria_sevilla2025-77'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54741209777/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54741209777_abad2666c5_3k.jpg', 'title': 'CineStill50D-Canon-Jun25 (7)'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54474634267/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54474634267_65df3bc7be_3k.jpg', 'title': 'Luna'},
