@@ -314,11 +314,11 @@ Si te ha gustado este proyecto, ¡no olvides dejar una ⭐ en el repositorio!
 
 ---
 ## Galería:
-<img width="1211" height="859" alt="1" src="https://github.com/user-attachments/assets/33412cb7-37b5-4d62-b7a7-7eae2b743bee" />
+<img width="1211" height="auto" alt="1" src="https://github.com/user-attachments/assets/33412cb7-37b5-4d62-b7a7-7eae2b743bee" />
 
 
-<img width="1140" height="744" alt="2" src="https://github.com/user-attachments/assets/6c5a7d67-520a-4a97-bb9b-d49d5098705d" />
+<img width="1140" height="auto" alt="2" src="https://github.com/user-attachments/assets/6c5a7d67-520a-4a97-bb9b-d49d5098705d" />
 
 
-<img width="1140" height="744" alt="2" src="https://github.com/user-attachments/assets/3b6f2109-9264-4070-9abd-72a72293251b" />
+<img width="1140" height="auto" alt="2" src="https://github.com/user-attachments/assets/3b6f2109-9264-4070-9abd-72a72293251b" />
 
