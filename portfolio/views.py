@@ -1,7 +1,51 @@
 from django.shortcuts import render
 
+# Redes sociales globales
+SOCIAL_MEDIA = [
+    {
+        'name': 'YouTube',
+        'url': 'https://www.youtube.com/@carlosvallejomusic',
+        'icon': 'images/youtube.png'
+    },
+    {
+        'name': 'Instagram',
+        'url': 'https://www.instagram.com/carlosd.vallejo/',
+        'icon': 'images/instagram.png'
+    },
+    {
+        'name': 'Bandcamp',
+        'url': 'https://carlosvallejo.bandcamp.com/',
+        'icon': 'images/bandcamp.png'
+    },
+    {
+        'name': 'LinkedIn',
+        'url': 'https://www.linkedin.com/in/carlos-d-vallejo-aranda-569685a5/',
+        'icon': 'images/linkedn.png'
+    },
+    {
+        'name': 'GitHub',
+        'url': 'https://github.com/cdvallejo',
+        'icon': 'images/github.png'
+    },
+    {
+        'name': 'SoundCloud',
+        'url': 'https://soundcloud.com/carlos-d-vallejo',
+        'icon': 'images/soundcloud.png'
+    },
+    {
+        'name': 'Twitter/X',
+        'url': 'https://twitter.com/carlvallejo',
+        'icon': 'images/x-twitter.jpg'
+    }
+]
+
 def index(request):
-  return render(request, "index.html") # Le decimos que renderice la página index.html
+  context = {'social_media': SOCIAL_MEDIA}
+  return render(request, "index.html", context)
+
+def bio(request):
+  context = {'social_media': SOCIAL_MEDIA}
+  return render(request, "bio.html", context)
 
 def musica(request):
     albums = [
@@ -61,8 +105,19 @@ def musica(request):
             'width': '350px',
             'height': '442px'
         },
+        {
+            'url': 'https://bandcamp.com/EmbeddedPlayer/album=2636471890/size=large/bgcol=ffffff/linkcol=7137dc/tracklist=false/transparent=true/',
+            'link': 'https://estudioabrego.bandcamp.com/album/noahmund',
+            'title': 'Noahmund de Carlos Vallejo',
+            'width': '350px',
+            'height': '470px'
+        },
     ]
-    return render(request, 'musica.html', {'albums': albums})
+    context = {
+        'albums': albums,
+        'social_media': SOCIAL_MEDIA
+    }
+    return render(request, 'musica.html', context)
 
 def programacion(request):
     projects = [
@@ -176,12 +231,17 @@ def programacion(request):
                 {
                     'name': 'AWS',
                     'icon': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
-                    'level': 'Intermedio'
+                    'level': 'Básico'
                 },
             ]
         },
     ]
-    return render(request, "programacion.html", {'projects': projects, 'skills_categories': skills_categories})
+    context = {
+        'projects': projects,
+        'skills_categories': skills_categories,
+        'social_media': SOCIAL_MEDIA
+    }
+    return render(request, "programacion.html", context)
 
 def audiovisual(request):
     videos = [
@@ -192,7 +252,11 @@ def audiovisual(request):
         {'url': 'https://www.youtube.com/embed/X7bzjwnF90k?si=fVPJ7iQuyMbXSmyL'},
         {'url': 'https://www.youtube.com/embed/NhRT8yUaxMc?si=zNMIRGM54mDfL4Hx'},
     ]
-    return render(request, 'audiovisual.html', {'videos': videos})
+    context = {
+        'videos': videos,
+        'social_media': SOCIAL_MEDIA
+    }
+    return render(request, 'audiovisual.html', context)
 
 def fotografia(request):
     fotos = [
@@ -215,7 +279,11 @@ def fotografia(request):
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54340909255/in/album-72177720325004226', 'img_url': 'https://live.staticflickr.com/65535/54340909255_ee104c8a99_3k.jpg', 'title': 'Noche en calle Alcazabilla'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/14596775931/in/album-72157645567479604/', 'img_url': 'https://live.staticflickr.com/3925/14596775931_116352c91a_3k.jpg', 'title': 'IMG_0951'},
     ]
-    return render(request, "fotografia.html", {'fotos': fotos})
+    context = {
+        'fotos': fotos,
+        'social_media': SOCIAL_MEDIA
+    }
+    return render(request, "fotografia.html", context)
 
 def contacto(request):
   if request.method == 'POST':
@@ -248,10 +316,13 @@ def contacto(request):
         fail_silently=False,
       )
       
-      return render(request, "contacto.html", {'mensaje_enviado': True})
+      context = {'mensaje_enviado': True, 'social_media': SOCIAL_MEDIA}
+      return render(request, "contacto.html", context)
     
     except Exception as e:
       print(f"Error al enviar email: {e}")  # Para ver el error en la consola
-      return render(request, "contacto.html", {'error': f'Error al enviar el mensaje. Por favor, intenta de nuevo.'})
+      context = {'error': f'Error al enviar el mensaje. Por favor, intenta de nuevo.', 'social_media': SOCIAL_MEDIA}
+      return render(request, "contacto.html", context)
   
-  return render(request, "contacto.html")
+  context = {'social_media': SOCIAL_MEDIA}
+  return render(request, "contacto.html", context)

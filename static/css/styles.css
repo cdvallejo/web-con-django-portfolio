@@ -105,7 +105,7 @@ nav ul li a {
   transition: color 0.3s ease;
 }
 
-nav ul li:hover a {
+nav ul li a:hover {
   color: #000;
 }
 
@@ -121,7 +121,7 @@ nav ul li::after {
   transform: translateX(-50%);
 }
 
-nav ul li:hover::after {
+nav ul li:has(a:hover)::after {
   width: 80%;
 }
 
@@ -241,9 +241,8 @@ nav ul li:hover::after {
 }
 
 .header-social a:hover img {
-  transform: translateY(-2px);
-  filter: brightness(1.2);
   transform: translateY(-3px);
+  filter: brightness(1.2);
 }
 
 /* ==================== PÁGINA PRINCIPAL - HERO ==================== */
@@ -458,7 +457,7 @@ nav ul li:hover::after {
   animation: fadeIn 1s ease-in;
 }
 
-.texto-musica {
+.texto-cabecera {
   text-align: center;
   margin-bottom: 3rem;
   padding: 2rem;
@@ -467,13 +466,13 @@ nav ul li:hover::after {
   border-radius: 15px;
 }
 
-.texto-musica h1 {
+.texto-cabecera h1 {
   font-size: 2.5rem;
   color: #ffffff;
   margin-bottom: 1rem;
 }
 
-.texto-musica p {
+.texto-cabecera p {
   font-size: 1.2rem;
   color: #b0b0b0;
   max-width: 700px;
@@ -771,98 +770,47 @@ nav ul li:hover::after {
   text-align: center;
 }
 
-.skills-tabla {
+.skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 1rem;
   justify-content: center;
 }
 
 .skill-item {
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.8rem;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border-radius: 10px;
   transition: all 0.3s ease;
-  width: 110px;
+  width: 100px;
   flex-shrink: 0;
 }
 
 .skill-item:hover {
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
-  transform: translateY(-2px);
+  transform: translateY(-5px);
   border-color: rgba(102, 126, 234, 0.5);
-}
-
-.skill-item .skill-icon {
-  font-size: 2rem;
-  margin-bottom: 0.3rem;
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
 
 .skill-icon-img {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 0.3rem;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.5rem;
   transition: transform 0.3s ease;
 }
 
 .skill-item:hover .skill-icon-img {
-  transform: scale(1.1);
+  transform: scale(1.15);
 }
 
 .skill-item .skill-name {
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 0.3rem;
-  font-size: 0.9rem;
-}
-
-.skill-level-text {
-  font-size: 0.75rem;
-  color: #b0b0b0;
-  margin-bottom: 0.2rem;
-  font-weight: 500;
-}
-
-.skill-level-bar {
-  width: 100%;
-  height: 5px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  margin-top: 0.2rem;
-}
-
-.skill-level-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
-  border-radius: 10px;
-  transition: width 1s ease-out;
-  animation: fillBar 1.5s ease-out;
-}
-
-/* Anchos según nivel */
-.level-básico {
-  width: 35%;
-}
-
-.level-intermedio {
-  width: 65%;
-}
-
-.level-avanzado {
-  width: 85%;
-}
-
-.level-experto {
-  width: 100%;
-}
-
-@keyframes fillBar {
-  from {
-    width: 0;
-  }
+  font-size: 0.85rem;
+  line-height: 1.2;
 }
 
 
@@ -885,23 +833,6 @@ nav ul li:hover::after {
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-}
-
-.contacto-img {
-  max-width: 460px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contacto-img img {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .contacto-form-container {
@@ -1013,6 +944,163 @@ nav ul li:hover::after {
 
 .btn-submit:active {
   transform: translateY(0);
+}
+
+/* ==================== SECCIÓN DE BIO ==================== */
+.bio-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  animation: fadeIn 1s ease-in;
+}
+
+.bio-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 3rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+.bio-text {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bio-text h2 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bio-text h3 {
+  font-size: 1.3rem;
+  color: #a374ff;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.bio-text p {
+  color: #e0e0e0;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.bio-text strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.bio-text em {
+  color: #a374ff;
+  font-style: italic;
+}
+
+.bio-sidebar {
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.bio-img {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+  border: 2px solid rgba(102, 126, 234, 0.3);
+  transition: all 0.3s ease;
+}
+
+.bio-img:hover {
+  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.5);
+  border-color: rgba(102, 126, 234, 0.6);
+}
+
+.bio-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.bio-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bio-link {
+  display: block;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.bio-link:hover {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.bio-cta {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.btn-primary {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #7137dc, #8c52ff);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(113, 55, 220, 0.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(113, 55, 220, 0.5);
+  background: linear-gradient(135deg, #8c52ff, #a374ff);
+}
+
+/* Responsive para bio */
+@media (max-width: 968px) {
+  .bio-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bio-img {
+    position: relative;
+    top: 0;
+    order: -1;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .bio-text {
+    padding: 2rem;
+  }
 }
 
 /* ==================== FOOTER ==================== */

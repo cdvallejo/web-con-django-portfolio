@@ -5,7 +5,7 @@
 {% block content %}
 
 <div class="programacion-section">
-  <div class="programacion-header">
+  <div class="texto-cabecera">
     <h1>Desarrollo de Software</h1>
     <p>Proyectos de desarrollo web y aplicaciones con tecnologías modernas</p>
   </div>
@@ -37,15 +37,11 @@
       {% for category in skills_categories %}
       <div class="skills-category">
         <h3 class="category-title">{{ category.category }}</h3>
-        <div class="skills-tabla">
+        <div class="skills-grid">
           {% for skill in category.items %}
           <div class="skill-item">
             <img src="{{ skill.icon }}" alt="{{ skill.name }}" class="skill-icon-img">
             <div class="skill-name">{{ skill.name }}</div>
-            <div class="skill-level-text">{{ skill.level }}</div>
-            <div class="skill-level-bar">
-              <div class="skill-level-fill level-{{ skill.level|lower }}"></div>
-            </div>
           </div>
           {% endfor %}
         </div>

@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="contacto-section">
+
+  <div class="bio-content">
+    <div class="bio-text">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy <strong>Carlos Vallejo</strong>, malagueño, licenciado en <strong>Comunicación Audiovisual</strong> y
+        titulado en <strong>Composición</strong>.
+        En los últimos dos años me he adentrado en el mundo de la tecnología y la programación, comenzando en la
+        <strong>Escuela 42 Málaga Fundación Telefónica</strong> y continuando con el ciclo formativo de
+        <strong>FP DAM</strong> en el <strong>IES Aguadulce</strong>.
+        Durante este tiempo me he formado en distintas áreas con el objetivo de adquirir una base sólida y transversal,
+        necesaria para adentrarme en el ámbito de la <strong>ciberseguridad</strong> y la
+        <strong>computación en la nube</strong>, campos en los que he profundizado en los dos últimos años,
+        obteniendo el título de <strong>AWS Architect Associate</strong> y completando recientemente el
+        <strong>Certificado de Google en Ciberseguridad</strong> y el
+        <strong>Certificado de Desarrollo de Aplicaciones con Tecnología Web (Nivel 3)</strong> en el
+        <strong>CPIFP Alan Turing</strong>.
+      </p>
+
+      <p>
+        Como compositor titulado por el <strong>Conservatorio Superior de Música de Málaga</strong>,
+        he trabajado componiendo música y diseñando sonido para diversos proyectos audiovisuales,
+        destacando especialmente mis trabajos en el ámbito de los videojuegos:
+        <em>Noahmund</em>, galardonado en dos ediciones de la feria Gamepolis
+        (<strong>Premio al Mejor Audio, 2016</strong>; <strong>Premio Especial Gordon Walton, 2017</strong>);
+        <em>Magical Prisma</em>, <strong>Premio al Mejor Juego en Gamepolis 2019</strong>; o
+        <em>Flocking Pets</em>.
+        Actualmente colaboro en la creación del apartado musical y sonoro de distintos proyectos de
+        <strong>Viva Games Studios</strong>.
+      </p>
+
+      <p>
+        Además, he participado en diversas charlas y conferencias, como la
+        <strong>Málaga Game Sound 2021</strong>,
+        y he impartido talleres de <strong>Audio para videojuegos</strong> en la
+        <strong>Escuela EVAD</strong> y en el
+        <strong>Conservatorio Superior de Música de Málaga</strong>.
+      </p>
+
+      <p>
+        Como apasionado de la <strong>cultura audiovisual</strong> y las
+        <strong>nuevas tecnologías</strong>, sigo en camino de reunir ambos ámbitos en mi carrera profesional.
+      </p>
+    </div>
+    <div class="bio-sidebar">
+      <div class="bio-img">
+        <img src="{% static 'images/carlos-vallejo-bio.jpg' %}" alt="Bio Carlos Vallejo">
+      </div>
+      <div class="bio-links">
+        <a href="{% static 'docs/CV-Carlos-Vallejo.pdf' %}" target="_blank" class="bio-link">
+          📄 Descargar CV
+        </a>
+        <a href="https://www.linkedin.com/in/carlos-d-vallejo-aranda-569685a5/" target="_blank" class="bio-link">
+          💼 Perfil LinkedIn
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
