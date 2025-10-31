@@ -270,7 +270,7 @@ def fotografia(request):
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54528448625/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54528448625_b77a117d33_3k.jpg', 'title': 'DSCF1733'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54528290804/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54528290804_907f0dfd59_3k.jpg', 'title': 'dia_museos_2025-12'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54053314191/in/album-72177720321003992', 'img_url': 'https://live.staticflickr.com/65535/54053314191_8280784052_3k.jpg', 'title': 'Coche con patas'},
-        {'page_url': 'https://www.flickr.com/photos/113666935@N06/54511521407/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54511521407_ca268722c8_3k.jpg', 'title': 'feria_sevilla2025-77'},
+        {'page_url': 'https://www.flickr.com/photos/113666935@N06/54512649298/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54512649298_05af07046d_3k.jpg', 'title': 'feria_sevilla2025-80'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54741209777/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54741209777_abad2666c5_3k.jpg', 'title': 'CineStill50D-Canon-Jun25 (7)'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54474634267/in/dateposted-public/', 'img_url': 'https://live.staticflickr.com/65535/54474634267_65df3bc7be_3k.jpg', 'title': 'Luna'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54714455964/in/album-72177720328316699', 'img_url': 'https://live.staticflickr.com/65535/54714455964_08738f8dd0_3k.jpg', 'title': 'montoro-agos25-15'},
@@ -278,6 +278,7 @@ def fotografia(request):
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54621804810/in/album-72177720325004226', 'img_url': 'https://live.staticflickr.com/65535/54621804810_f17f571ec2_3k.jpg', 'title': 'Crisol Muelle Uno'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/54340909255/in/album-72177720325004226', 'img_url': 'https://live.staticflickr.com/65535/54340909255_ee104c8a99_3k.jpg', 'title': 'Noche en calle Alcazabilla'},
         {'page_url': 'https://www.flickr.com/photos/113666935@N06/14596775931/in/album-72157645567479604/', 'img_url': 'https://live.staticflickr.com/3925/14596775931_116352c91a_3k.jpg', 'title': 'IMG_0951'},
+        
     ]
     context = {
         'fotos': fotos,
