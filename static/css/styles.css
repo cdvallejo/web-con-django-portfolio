@@ -482,7 +482,7 @@ nav ul li:has(a:hover)::after {
 
 .bc-musica {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   justify-items: center;
 }
@@ -491,6 +491,8 @@ nav ul li:has(a:hover)::after {
   border-radius: 10px;
   box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
   transition: all 0.3s ease;
+  max-width: 100%;
+  height: auto;
 }
 
 .bc-musica iframe:hover {
@@ -626,7 +628,7 @@ nav ul li:has(a:hover)::after {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -641,7 +643,9 @@ nav ul li:has(a:hover)::after {
   transition: all 0.3s ease;
   display: flex;
   flex-direction: column;
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .project-card:hover {
@@ -790,7 +794,6 @@ nav ul li:has(a:hover)::after {
 
 .skill-item:hover {
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.15), rgba(118, 75, 162, 0.15));
-  transform: translateY(-5px);
   border-color: rgba(102, 126, 234, 0.5);
   box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
 }
@@ -1267,7 +1270,14 @@ footer {
   }
 
   .bc-musica {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .bc-musica iframe {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 400px;
   }
 
   nav ul {
