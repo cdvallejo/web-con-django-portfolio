@@ -996,6 +996,7 @@ nav ul li:has(a:hover)::after {
   line-height: 1.8;
   margin-bottom: 1.5rem;
   font-size: 1.05rem;
+  text-align: justify;
 }
 
 .bio-text strong {
@@ -1103,6 +1104,10 @@ nav ul li:has(a:hover)::after {
 
   .bio-text {
     padding: 2rem;
+  }
+
+  .bio-text h2 {
+    text-align: center;
   }
 }
 
