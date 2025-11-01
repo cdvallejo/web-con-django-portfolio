@@ -1247,7 +1247,7 @@ footer {
   }
 
   .header-social {
-    order: 3;
+    display: none;
   }
 }
 
@@ -1292,5 +1292,18 @@ footer {
   .header-social img {
     width: 28px;
     height: 28px;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .copyright {
+    order: 2;
+  }
+
+  .footer-social {
+    order: 1;
   }
 }
